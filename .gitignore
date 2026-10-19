@@ -1,0 +1,14 @@
+# secrets and local config
+.env
+.env.*
+!.env.example
+# python
+venv/
+__pycache__/
+*.pyc
+# node and next
+node_modules/
+.next/
+out/
+# mac
+.DS_Store

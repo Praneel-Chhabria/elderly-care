@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mist: #e8f0ed;
+  --color-paper: #ffffff;
+  --color-ink: #0d2b2e;
+  --color-muted: #587072;
+  --color-line: #d6e3df;
+  --color-brand: #0f6b6e;
+  --color-brand-soft: #d4ede9;
+  --color-taken: #1c7a52;
+  --color-taken-bg: #d8f0e3;
+  --color-due: #8f5d0a;
+  --color-due-bg: #fbeac6;
+  --color-missed: #b3261e;
+  --color-missed-bg: #fadbd8;
+  --font-sans: var(--font-atkinson), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+}
+
+body {
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-color: #eef4f1;
+  background-image:
+    radial-gradient(900px 480px at 8% -8%, #cfeee6 0%, transparent 62%),
+    radial-gradient(800px 420px at 100% 0%, #f6e8cf 0%, transparent 58%);
+  background-attachment: fixed;
+}
+
+.card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgb(13 43 46 / 6%), 0 18px 40px -22px rgb(13 43 46 / 28%);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.5s ease both; }
+
+@keyframes ping-red {
+  0% { box-shadow: 0 0 0 0 rgb(179 38 30 / 0.5); }
+  100% { box-shadow: 0 0 0 10px rgb(179 38 30 / 0); }
+}
+.pulse-red { animation: ping-red 1.6s ease-out infinite; }
+
+@keyframes ping-green {
+  0% { box-shadow: 0 0 0 0 rgb(28 122 82 / 0.5); }
+  100% { box-shadow: 0 0 0 8px rgb(28 122 82 / 0); }
+}
+.pulse-green { animation: ping-green 1.8s ease-out infinite; }
+
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
